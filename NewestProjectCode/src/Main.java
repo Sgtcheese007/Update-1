@@ -15,8 +15,10 @@ import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
 
+import javax.swing.*;
 import java.awt.*;
 import java.io.File;
+import java.io.IOException;
 import java.util.Optional;
 
 import static java.awt.SystemColor.desktop;
@@ -51,8 +53,15 @@ public class Main extends Application {
 
         //help button
         Button helpbutton = new Button("Help");
-        //File readme = new File("D:\\Coursework\\Useless files\\NewestProjectCode");
-        //helpbutton.setOnAction(Desktop.getDesktop().open(File readme));
+        ProcessBuilder openN = new ProcessBuilder("Notepad.exe", "readme.txt");
+        helpbutton.setOnAction((ActionEvent ae) -> {
+            try {
+                openN.start();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }); //opens readme file in notepad when user presses help button
+
         BorderPane.setAlignment(helpbutton, Pos.BOTTOM_LEFT);
         helpbutton.getStyleClass().add("button_layout_1");
         leftVBox.getChildren().add(helpbutton);
