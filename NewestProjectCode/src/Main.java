@@ -39,7 +39,7 @@ public class Main extends Application {
         title.getStyleClass().add("label_text_title");
         mainborderpane.setTop(title);
 
-        //make vbox
+        //makes the vbox
         VBox leftVBox = new VBox();
         leftVBox.setPadding(new Insets(10, 10, 10, 10));
 
@@ -51,7 +51,7 @@ public class Main extends Application {
 
         //help button
         Button helpbutton = new Button("Help");
-        File readme = new File("D:\\Coursework\\Useless files\\NewestProjectCode");
+        //File readme = new File("D:\\Coursework\\Useless files\\NewestProjectCode");
         //helpbutton.setOnAction(Desktop.getDesktop().open(File readme));
         BorderPane.setAlignment(helpbutton, Pos.BOTTOM_LEFT);
         helpbutton.getStyleClass().add("button_layout_1");
